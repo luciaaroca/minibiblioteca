@@ -3,6 +3,17 @@
 import books from "./books.js";
 console.log(books);
 
+//crear un header con su id
+const header= document.createElement("header"); //creamos etiqueta header
+
+const atributoh= document.createAttribute("id") // creamos el id 
+atributoh.value="encabezado" //aqui damos valor al id="contenedor"
+header.setAttributeNode(atributoh);//aqui le ponemos ese id a main
+document.body.appendChild(header);
+
+const tituloHead = document.createTextNode("MINI BIBLIOTECA");
+header.appendChild(tituloHead);
+
 //crear un contenedor para todo con un id
 
 const main= document.createElement("main"); //creamos etiqueta main
@@ -23,11 +34,11 @@ for(const book of books){ //para cada book de los books
        <h2>AUTHOR: ${book.author}</h2>
        <h3>COUNTRY: ${book.country}</h3>
        <img src="${book.imageLink}" alt="${book.title}"/>
-       <p>Language: ${book.language}</p>
+       <p><span class = "negritas">Language:</span> ${book.language}</p>
        <a href="${book.link}">Link al libro</a>
-       <p>Nº de páginas: ${book.pages}</p>
-       <p>Título: ${book.title}</p>
-       <p>Year: ${book.year}</p>
+       <p><span class = "negritas">Nº de páginas:</span> ${book.pages}</p>
+       <p><span class = "negritas">Título:</span> ${book.title}</p>
+       <p><span class = "negritas">Year:</span> ${book.year}</p>
      </div>
     `
     ;

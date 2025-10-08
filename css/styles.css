@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+
+:root{
+    --color-fondo:#f7d883;
+    --color-marron:#462e15;
+    --color-textos: #b37b0b;;
+}
+
 
 /*RESET*/
 html, body, div, span, applet, object, iframe,
@@ -52,37 +61,66 @@ body{
     min-height: 100dvh;
     display: flex;/*PONE LAS COSAS AL LADO DE OTRAS*/
     flex-direction: column; /*lo alinea en columnasS*/
+    background-color: var(--color-fondo);
+    font-size: 20px;
+    font-family: "Comic Neue", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+#encabezado{
+    font-family: "Barriecito", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    position: fixed;
+    top:0;
+    left:0;
+    padding: 20px;
+    width: 100%;
+    background-color: var(--color-marron);
+    color: white;
+    z-index: 999;
+    text-align: center;
+    font-size: 50px;
+    box-sizing: border-box;
 }
 #contenedor{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 110px; /*cuando ahags un scroll el margen tiene que quedar a 60px*/
+    width: 100%;
     gap: 50px;
     justify-content: center;
-    background-color: #f7d883;
+    background-color: var(--color-fondo);
     padding: 20px;
+    flex-grow:1;
 }
 div{
     background-color: #f0e9e4 ;
     padding: 20px;
-    border: 3px solid rgb(80, 39, 39);
+    border: 3px solid var(--color-marron);
     border-radius: 30px;
     width: 300px;
     
 }
+div:hover {
+  transform: scale(1.1); /* hace que la tarjeta crezca un 10% */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* un poco más de sombra */
+  z-index: 10; /* la trae al frente para que no se tape */
+}
 h2{
     font-size: 30px;
     font-weight: 700;
-    color:#9d590c;
+    color:var(--color-textos);
     margin-bottom: 10px;
 }
 h3 {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
     color: #38230b;
     margin-bottom: 10px;
 }
 a {
-    color:rgb(128, 72, 4);
+    color:var(--color-textos);
     text-decoration: none;
     font-weight: 700;
     margin-bottom: 5px;
@@ -94,4 +132,29 @@ img{
 }
 p{
     margin-bottom: 5px;
+}
+
+.negritas{
+    font-weight:700 ;
+}
+
+@media (max-width: 600px){
+   body{
+    font-size:16px ;
+   }
+   #encabezado{
+     font-size: 40px;
+   }
+   div{
+    width: 200px;
+   }
+   h2{
+    font-size: 30px;
+   }
+   h3 {
+    font-size: 18px;
+   }
+   img{
+     width: 150px ;
+   }
 }
