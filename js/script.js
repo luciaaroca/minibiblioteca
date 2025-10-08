@@ -22,8 +22,8 @@ for(const book of books){ //para cada book de los books
      <div class="card">
        <h2>AUTHOR: ${book.author}</h2>
        <h3>COUNTRY: ${book.country}</h3>
+       <img src="${book.imageLink}" alt="${book.title}"/>
        <p>Language: ${book.language}</p>
-       <img src="${book.imageLink}" alt="${book.title}">
        <a href="${book.link}">Link al libro</a>
        <p>Nº de páginas: ${book.pages}</p>
        <p>Título: ${book.title}</p>
